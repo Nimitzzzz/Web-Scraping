@@ -2,6 +2,7 @@
 ### 23.83.0970
 ### 23TK01
 ### Andi Ahmad Fauzan
+#### Link google colab drive : https://colab.research.google.com/drive/1g6C94schh1f2s50RaVJxBX4klHMkJM5H?usp=sharing
 <br>
 <hr>
 
