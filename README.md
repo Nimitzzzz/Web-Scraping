@@ -110,13 +110,20 @@ def scrape_sp500_data(url):
 ## Visualisasi data menggunakan Bar Plot
 ```python
 def visualize_data(df):
-    # Bar plot untuk perusahaan top berdasarkan kapitalisasi pasar
     top_companies = df.nlargest(10, 'MCap')
     plt.figure(figsize=(14, 6))
-    sns.barplot(x='Company', y='MCap', data=top_companies, palette='viridis')
-    plt.xticks(rotation=45, ha='right')
+    sns.barplot(x='MCap', y='Company', data=top_companies, palette='viridis')
     plt.title("Top 10 Companies by Market Cap")
-    plt.ylabel("Market Cap (in trillions)")
+    plt.xlabel("Market Cap (in trillions)")
+    plt.ylabel("Company")
+    plt.show()
+
+    price_range_counts = df['Price Range'].value_counts().sort_index()
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x=price_range_counts.index, y=price_range_counts.values, palette='muted')
+    plt.title("Distribution of Companies by Price Range")
+    plt.xlabel("Price Range (USD)")
+    plt.ylabel("Number of Companies")
     plt.show()
 
 # Fungsi untuk visualisasi data:
